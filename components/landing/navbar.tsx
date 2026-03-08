@@ -90,11 +90,6 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex gap-2 px-4 pt-2">
-              {/* <Link href="/dashboard" className="flex-1" onClick={() => setIsOpen(false)}>
-                <Button variant="outline" className="w-full border-gray-300">
-                  Dashboard
-                </Button>
-              </Link> */}
               <Button className="flex-1 bg-indigo-600 hover:bg-indigo-700">
                 Quote
               </Button>
