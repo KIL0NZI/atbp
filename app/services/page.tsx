@@ -4,16 +4,16 @@ import { useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogHeader, 
-  DialogTitle, 
-  DialogTrigger 
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
 } from '@/components/ui/dialog'
-import { 
-  Users, Zap, Globe, Crown, CheckCircle2, 
-  Trophy, Target, Mail, MessageCircle 
+import {
+  Users, Zap, Globe, Crown, CheckCircle2,
+  Trophy, Target, Mail, MessageCircle, Sparkles
 } from 'lucide-react'
 
 const serviceCategories = [
@@ -28,7 +28,7 @@ const serviceCategories = [
         capacity: '10-100 people',
         image: '/1.jpg',
         description: 'Engaging activities in climate-controlled spaces perfect for corporate offices or conference venues.',
-        features: ['Icebreaker games', 'Problem-solving challenges', 'Team competitions', 'Expert facilitators'],
+        features: ['Icebreaker games', "Experiential teambuilding lessons talk", 'Problem-solving challenges', 'Team competitions', 'Expert facilitators'],
         whatsappMsg: "Hi Adlucem! I'm interested in the Indoor Team Building package. Could you provide a quote for our team?",
         emailSubject: "Inquiry: Indoor Team Building Package",
       },
@@ -36,10 +36,10 @@ const serviceCategories = [
         id: 2,
         icon: Zap,
         name: 'Outdoor Adventures',
-        capacity: '15-200 people',
+        capacity: 'Unlimited',
         image: '/9.jpg',
         description: 'High-energy outdoor experiences that build lasting bonds and unforgettable memories.',
-        features: ['Scavenger hunts', 'Obstacle courses', 'Adventure races', 'Safety gear included'],
+        features: ['Scavenger hunts', 'Obstacle courses', "Experiential teambuilding lessons talk", 'Adventure races', 'Aerobics'],
         whatsappMsg: "Hi Adlucem! Our team is ready for an Outdoor Adventure. Can you share more details on the activities included?",
         emailSubject: "Inquiry: Outdoor Adventures Package",
       }
@@ -56,7 +56,7 @@ const serviceCategories = [
         capacity: 'Unlimited',
         image: 'https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?auto=format&fit=crop&q=80&w=800',
         description: 'Engaging remote activities perfect for distributed teams and hybrid workplaces.',
-        features: ['Online games & trivia', 'Virtual escape rooms', 'Wellness sessions', 'Interactive platform'],
+        features: ['Online games & trivia', "Experiential teambuilding lessons talk", 'Wellness sessions', 'Interactive platform'],
         whatsappMsg: "Hi Adlucem! I'd like to book a Virtual Team Building session for our remote staff. How do we get started?",
         emailSubject: "Inquiry: Virtual Team Building Support",
       },
@@ -66,8 +66,8 @@ const serviceCategories = [
         name: 'Executive Retreats',
         capacity: '20-300 people',
         image: '/8.jpg',
-        description: 'Customized multi-day experiences designed for leadership development and strategic planning.',
-        features: ['Luxury accommodations', 'Leadership coaching', 'Custom activities', 'Full logistics support'],
+        description: 'Customized multi-day experiences designed for mental health, leadership development and strategic planning.',
+        features: ['Luxury accommodations', 'Leadership coaching', "Experiential teambuilding lessons talk", "Mental health workshops/activities", 'Custom activities', 'Full logistics support'],
         whatsappMsg: "Hi Adlucem! We are planning an Executive Retreat. I'd like to discuss a customized itinerary for our leadership team.",
         emailSubject: "Inquiry: Executive Retreat Planning",
       }
@@ -77,29 +77,27 @@ const serviceCategories = [
 
 export default function ServicesPage() {
   const [selectedPackage, setSelectedPackage] = useState<any>(null)
-  const WHATSAPP_NUMBER = "254701256008" // Updated to your client's number
+  const WHATSAPP_NUMBER = "254750272602" // Your client's number
 
   const handleInquiry = (type: 'whatsapp' | 'email', pkg: any) => {
-    const encodedMsg = encodeURIComponent(pkg.whatsappMsg)
-    
+    const encodedMsg = encodeURIComponent(pkg.whatsappMsg || "Hi Adlucem! I'm interested in discussing a custom teambuilding solution.")
+
     if (type === 'whatsapp') {
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`, '_blank')
     } else {
-      const subject = encodeURIComponent(pkg.emailSubject)
-      const body = encodeURIComponent(pkg.whatsappMsg) // Reusing the message for consistency
-      window.location.href = `mailto:martinkilonzi748@gmail.com?subject=${subject}&body=${body}`
+      const subject = encodeURIComponent(pkg.emailSubject || "Inquiry: Custom Teambuilding Solution")
+      window.location.href = `mailto:adlucemteambuildingpros@gmail.com?subject=${subject}&body=${encodedMsg}`
     }
   }
 
   return (
     <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white min-h-screen">
-      {/* ... Header stays the same ... */}
       <div className="max-w-4xl mx-auto text-center mb-20">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-marker tracking-wide uppercase">
           Tailored <span className="text-indigo-600">Solutions</span> for Every Team
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed">
-          Whether you’re looking to break the ice with new hires or sharpen the leadership skills of your C-suite, 
+          Whether you’re looking to break the ice with new hires or sharpen the leadership skills of your C-suite,
           we have a package designed to meet your goals.
         </p>
       </div>
@@ -113,8 +111,8 @@ export default function ServicesPage() {
                 <p className="text-gray-500 mt-2">{section.subtitle}</p>
               </div>
               <div className="hidden sm:flex gap-4 text-sm font-medium text-indigo-600">
-                <span className="flex items-center gap-1"><Trophy size={16}/> Professional Facilitators</span>
-                <span className="flex items-center gap-1"><Target size={16}/> Goal-Oriented</span>
+                <span className="flex items-center gap-1"><Trophy size={16} /> Professional Facilitators</span>
+                <span className="flex items-center gap-1"><Target size={16} /> Goal-Oriented</span>
               </div>
             </div>
 
@@ -139,7 +137,7 @@ export default function ServicesPage() {
 
                       <Dialog>
                         <DialogTrigger asChild>
-                          <Button 
+                          <Button
                             className="w-full h-12 bg-indigo-600 hover:bg-indigo-700 text-white font-bold"
                             onClick={() => setSelectedPackage(service)}
                           >
@@ -172,13 +170,13 @@ export default function ServicesPage() {
                                   </div>
 
                                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                                    <Button 
+                                    <Button
                                       className="flex-1 bg-[#25D366] hover:bg-[#1ebe57] gap-2 h-14 text-lg font-bold shadow-lg"
                                       onClick={() => handleInquiry('whatsapp', selectedPackage)}
                                     >
                                       <MessageCircle size={22} /> Inquire via WhatsApp
                                     </Button>
-                                    <Button 
+                                    <Button
                                       variant="outline"
                                       className="flex-1 border-gray-300 gap-2 h-14 text-lg font-bold"
                                       onClick={() => handleInquiry('email', selectedPackage)}
@@ -199,8 +197,45 @@ export default function ServicesPage() {
             </div>
           </div>
         ))}
+
+        {/* --- CUSTOM FLEXIBILITY SECTION --- */}
+        <div className="pt-12">
+          <Card className="bg-indigo-50 border-2 border-dashed border-indigo-200 p-8 md:p-12 rounded-[2rem] overflow-hidden relative group">
+            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform duration-500">
+              <Sparkles size={120} className="text-indigo-600" />
+            </div>
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <Badge className="bg-indigo-600 text-white mb-4">Tailor-Made</Badge>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Need a Custom Experience?</h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  We pride ourselves on our <span className="font-bold text-indigo-600">flexibility</span>. If you don't see exactly what you need, let's build it together. We mix elements from all our packages to create unique events that fit your team's size and budget perfectly.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4">
+                <Button
+                  className="bg-[#25D366] hover:bg-[#1ebe57] h-16 text-xl font-bold rounded-2xl shadow-lg flex items-center justify-center gap-3"
+                  onClick={() => handleInquiry('whatsapp', { whatsappMsg: "Hi Adlucem! I'd like to discuss a custom teambuilding solution." })}
+                >
+                  <img
+                    src="https://img.icons8.com/?size=100&id=uZWiLUyryScN&format=png&color=25D366"
+                    alt="wa"
+                    className="w-5 h-5 transition-transform group-hover/wa:scale-110"
+                  />
+                  Discuss Custom Plan
+                </Button>
+                <Button
+                  variant="outline"
+                  className="bg-white border-indigo-200 h-16 text-xl font-bold rounded-2xl hover:bg-gray-400 transition-colors flex items-center justify-center gap-3"
+                  onClick={() => window.location.href = '/contact'}
+                >
+                  <Mail size={28} /> Send Custom Inquiry
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
       </div>
-      {/* ... Custom CTA stays the same ... */}
     </main>
   )
 }

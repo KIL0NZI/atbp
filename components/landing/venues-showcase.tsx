@@ -11,7 +11,7 @@ const showcaseVenues = [
     name: "Boffar Gardens Naivasha",
     location: "Naivasha",
     highlights: "Lush Gardens & Team Building Grounds",
-    image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=800",
+    image: "/11.jpg",
     whatsappMsg: "Hi Adlucem! I'm interested in booking Boffar Gardens Naivasha for a team building event. Could you share more details?",
     emailDetails: {
       subject: "Inquiry: Boffar Gardens Naivasha",
@@ -23,7 +23,7 @@ const showcaseVenues = [
     name: "Sentrim Elementaita",
     location: "Elementaita",
     highlights: "Lakeside View & Serene Environment",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800",
+    image: "/33.jpg",
     whatsappMsg: "Hi Adlucem! I'm interested in booking Sentrim Elementaita. Do you have any open dates for next month?",
     emailDetails: {
       subject: "Inquiry: Sentrim Elementaita Venue",
@@ -32,21 +32,21 @@ const showcaseVenues = [
   },
   {
     id: 3,
-    name: "Serena Beach Resort",
-    location: "Mombasa",
-    highlights: "Swahili Style Coastal Luxury",
-    image: "https://images.unsplash.com/photo-1544124499-58912cbddada?q=80&w=800",
-    whatsappMsg: "Hi Adlucem! I'm interested in booking Serena Beach Resort for our team. What are the logistics for a group of 50?",
+    name: "Nairobi Botanic Gardens",
+    location: "Nairobi",
+    highlights: "Unique Botanical Setting for Team Building",
+    image: "/37.jpg",
+    whatsappMsg: "Hi Adlucem! I'm interested in booking Nairobi Botanic Gardens for our team. What are the logistics for a group of 50?",
     emailDetails: {
-      subject: "Inquiry: Serena Beach Resort Mombasa",
-      body: "To Adlucem,\n\nWe are looking at Serena Beach Resort for our annual team getaway. Please provide a quote for 50 people.\n\nRegards,"
+      subject: "Inquiry: Nairobi Botanic Gardens",
+      body: "Hello Adlucem Team,\n\nWe are looking at Nairobi Botanic Gardens for our annual team getaway. Please provide a quote for 50 people.\n\nRegards,"
     }
   }
 ]
 
 export function VenuesShowcase() {
   const WHATSAPP_NUMBER = "254750272602"
-  const CONTACT_EMAIL = "info@adlucem.com"
+  const CONTACT_EMAIL = "adlucemteambuildingpros@gmail.com"
 
   const openWhatsApp = (msg: string) => {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank')

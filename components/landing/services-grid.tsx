@@ -23,7 +23,7 @@ const services = [
     id: 2,
     icon: Zap,
     name: 'Outdoor Adventures',
-    capacity: '15-200 people',
+    capacity: 'Unlimited',
     image: '/9.jpg',
     description: 'High-energy outdoor experiences that build lasting bonds and unforgettable memories.',
     features: ['Scavenger hunts', 'Obstacle courses', 'Adventure races', 'Campfire activities'],
@@ -64,7 +64,7 @@ const services = [
 ]
 
 export function ServicesGrid() {
-  const WHATSAPP_NUMBER = "254701256008"
+  const WHATSAPP_NUMBER = "254750272602"
   const CONTACT_EMAIL = "hello@adlucem.com"
 
   const handleInquiry = (service: typeof services[0]) => {

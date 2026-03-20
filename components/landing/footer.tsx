@@ -26,22 +26,22 @@ export function Footer() {
             <h4 className="font-bold text-white mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-indigo-400 transition-colors">
+                <Link href="/services" className="hover:text-indigo-400 transition-colors">
                   Indoor Activities
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-indigo-400 transition-colors">
+                <Link href="/services" className="hover:text-indigo-400 transition-colors">
                   Outdoor Adventures
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-indigo-400 transition-colors">
+                <Link href="/services" className="hover:text-indigo-400 transition-colors">
                   Virtual Events
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-indigo-400 transition-colors">
+                <Link href="/services" className="hover:text-indigo-400 transition-colors">
                   Executive Retreats
                 </Link>
               </li>
@@ -52,7 +52,7 @@ export function Footer() {
             <h4 className="font-bold text-white mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#about" className="hover:text-indigo-400 transition-colors">
+                <Link href="/about" className="hover:text-indigo-400 transition-colors">
                   About Us
                 </Link>
               </li>
@@ -67,7 +67,7 @@ export function Footer() {
                 </Link>
               </li> */}
               <li>
-                <Link href="#" className="hover:text-indigo-400 transition-colors">
+                <Link href="/contact" className="hover:text-indigo-400 transition-colors">
                   Contact
                 </Link>
               </li>
@@ -77,16 +77,16 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-white mb-4">Connect</h4>
             <div className="flex gap-4">
-              <Link href="#" className="hover:text-indigo-400 transition-colors">
+              <Link href="https://www.facebook.com/share/1DBTD41ZGe/" target='_' className="hover:text-indigo-400 transition-colors">
                 <Facebook size={20} />
               </Link>
-              <Link href="#" className="hover:text-indigo-400 transition-colors">
+              <Link href="https://www.facebook.com/share/1DBTD41ZGe/" target='_' className="hover:text-indigo-400 transition-colors">
                 <Twitter size={20} />
               </Link>
-              <Link href="#" className="hover:text-indigo-400 transition-colors">
+              {/* <Link href="#" className="hover:text-indigo-400 transition-colors">
                 <Linkedin size={20} />
-              </Link>
-              <Link href="#" className="hover:text-indigo-400 transition-colors">
+              </Link> */}
+              <Link href="https://www.threads.com/@adlucem_teambuilding_pros" target='_' className="hover:text-indigo-400 transition-colors">
                 <Instagram size={20} />
               </Link>
             </div>

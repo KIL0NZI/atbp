@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation' // Added this
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils' // Useful for conditional classes
+import { QuoteModal } from '../quote-modal'
 
 
 export function Navbar() {
@@ -19,8 +20,8 @@ export function Navbar() {
     { name: 'Services', href: '/services' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Venues', href: '/venues' },
-    { name: 'About', href: '/#about' },
-    { name: 'Testimonials', href: '/#testimonials' },
+    { name: 'About', href: '/about' },
+    // { name: 'Testimonials', href: '/#testimonials' },
     { name: 'Contact US', href: '/contact' },
 
   ]
@@ -57,9 +58,11 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button className="bg-indigo-600 hover:bg-indigo-700">
-              Request a Quote
-            </Button>
+            <QuoteModal>
+              <Button className="bg-indigo-600 hover:bg-indigo-700">
+                Request a Quote
+              </Button>
+            </QuoteModal>
           </div>
 
           {/* Mobile menu button */}
@@ -90,9 +93,11 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex gap-2 px-4 pt-2">
-              <Button className="flex-1 bg-indigo-600 hover:bg-indigo-700">
-                Quote
-              </Button>
+              <QuoteModal>
+                <Button className="flex-1 bg-indigo-600 hover:bg-indigo-700">
+                  Request a Quote
+                </Button>
+              </QuoteModal>
             </div>
           </div>
         )}

@@ -14,7 +14,7 @@ export default function Page() {
       <HeroSection />
       <ServicesGrid />
       <VenuesShowcase />
-      <TrustedBySection />
+      {/* <TrustedBySection /> */}
       <AboutSection />
       <Testimonials />
       {/* <Footer /> */}

@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
+import { QuoteModal } from '../quote-modal'
 
 export function HeroSection() {
   return (
@@ -33,14 +34,16 @@ export function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <Button
-            size="lg"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-lg shadow-xl"
-            onClick={() => window.open('https://wa.me/254700000000?text=Inquiry', '_blank')}
-          >
-            Request a Quote
-            <ArrowRight className="ml-2" size={20} />
-          </Button>
+          <QuoteModal>
+            <Button
+              size="lg"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 text-lg shadow-xl"
+            // onClick={() => window.open('https://wa.me/254700000000?text=Inquiry', '_blank')}
+            >
+              Request a Quote
+              <ArrowRight className="ml-2" size={20} />
+            </Button>
+          </QuoteModal>
           <Link href="/services">
             <Button
               size="lg"
